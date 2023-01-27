@@ -1,3 +1,23 @@
+'''Se tiene un sistema embebido que posee sensores de temperatura y humedad Mediante servicios
+que corren en el sistema, se leen los valores de los sensores y se dejan escritos en archivos que se
+encuentran en /tmp con el siguiente formato:
+• Sensor de temperatura: /tmp/tempX.data Siendo X el número de sensor.
+• Sensor de humedad: /tmp/humX.data Siendo X el número de sensor.
+Modelar en un programa en Python los sensores definiendo las siguientes clases:
+• Clase “Sensor”: recibe en el constructor el número de sensor. Tiene un método “read_file”
+que permite leer un valor float de un archivo. El mismo recibe el path al archivo y devuelve
+un float. Tiene un método “get_value()” que devuelve siempre 0.
+• Clase “SensorTemperatura”: Hereda de la clase “Sensor”. Tiene un método “get_value()”
+que devuelve la temperatura en un float truncando la parte negativa (si es menor que cero
+devuelve 0)
+• Clase “SensorHumedad”: Hereda de la clase “Sensor”. Tiene un método “get_value()” que
+devuelve la humedad leída haciendo un cambio de escala respecto del valor que está en el
+archivo: lo divide por 10.
+Crear los archivos /tmp/temp0.data , /tmp/temp1.data, /tmp/temp2.data , /tmp/hum0.data ,
+/tmp/hum1.data y cargarle valores. Hacer un programa que defina los objetos y llame a los métodos
+get_value() para probar el funcionamiento.
+'''
+
 class Sensor:
     def __init__(self, numSens):
         self.numSens = numSens
